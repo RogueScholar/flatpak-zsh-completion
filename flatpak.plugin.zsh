@@ -98,21 +98,35 @@ _flatpak() {
     "install:Install an application or runtime" \
     "update:Update an installed application or runtime" \
     "uninstall:Uninstall an installed application or runtime" \
+    "mask:Mask out updates and automatic installation" \
+    "pin:Pin runtimes to prevent automatic removal" \
     "list:List installed apps and/or runtimes" \
     "info:Show info for installed app or runtime" \
+    "history:Show history" \
+    "config:Manage flatpak configuration" \
+    "repair:Repair flatpak installation" \
+    "create-usb:Copy apps and/or runtimes onto removable media" \
+    "search:Search for applications and runtimes" \
     "run:Run an application" \
+    "kill:Stop a running application" \
     "override:Override permissions for an application" \
     "make-current:Specify default version to run" \
     "enter:Enter the namespace of a running application" \
     "document-export:Grant an application access to a specific file" \
     "document-unexport:Revoke access to a specific file" \
     "document-info:Show information about a specific file" \
-    "document-list:List exported files" \
+    "documents:List exported files" \
+    "permission-remove:Remove item from permission store" \
+    "permissions:List permissions" \
+    "permission-show:Show app permissions" \
+    "permission-reset:Reset app permissions" \
+    "permission-set:Set app permissions" \
     "remotes:List all configured remotes" \
     "remote-add:Add a new remote repository (by URL)" \
     "remote-modify:Modify properties of a configured remote" \
     "remote-delete:Delete a configured remote" \
     "remote-ls:List contents of a configured remote" \
+    "remote-info:Show information about a ref in a configured remote repository" \
     "build-init:Initialize a directory for building" \
     "build:Run a build command inside the build dir" \
     "build-finish:Finish a build dir for export" \
@@ -122,13 +136,18 @@ _flatpak() {
     "build-sign:Sign an application or runtime" \
     "build-update-repo:Update the summary file in a repository" \
     "build-commit-from:Create new commit based on existing ref" \
+    "repo:Print information about a repo" \
+    "spawn:Run a command in another sandbox" \
     "--help:Show help options" \
     "--version:Print version information and exit" \
     "--default-arch:Print default arch and exit" \
     "--supported-arches:Print supported arches and exit" \
     "--gl-drivers:Print active gl drivers and exit" \
     "--verbose:Print debug information during command processing" \
-    "--ostree-verbose:Print OSTree debug information during command processing"
+    "--ostree-verbose:Print OSTree debug information during command processing" \
+    "--installations:Print paths of system installations and exit" \
+    "--print-updated-env:Print the set of environment variables needed to use flatpaks, amending the current set of environment variables" \
+    "--print-system-only:When the flatpak --print-updated-env command is run, only print the environment for system flatpak installations, not including the user’s home installation"
   )
   _arguments \
     "*:: :->subcmds" && return 0
