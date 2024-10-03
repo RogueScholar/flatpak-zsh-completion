@@ -70,6 +70,7 @@ _zsh_flatpak_get_remotes() {
 
 _zsh_flatpak_install_completion() {
   _install_arguments=(
+    "--reinstall:Uninstall first if already installed" \
     "--user:Work on user installations" \
     "--system:Work on system-wide installations (default)" \
     "--installation:Work on a specific system-wide installation" \
@@ -78,13 +79,18 @@ _zsh_flatpak_install_completion() {
     "--no-deploy:Don't deploy, only download to local cache" \
     "--no-related:Don't install related refs" \
     "--no-deps:Don't verify/install runtime dependencies" \
+    "--or-update:Normally install just ignores things that are already installed (printing a warning), but if --or-update is specified it silently turns it into an update operation instead" \
+    "--include-sdk:For each app being installed, also installs the SDK that was used to build it" \
+    "--include-debug:For each ref being installed, as well as all dependencies, also installs its debug info" \
     "--runtime:Look for runtime with the specified name" \
+    "--sideload-repo=PATH:Adds an extra local ostree repo as a source for installation" \
     "--app:Look for app with the specified name" \
     "--bundle:Assume LOCATION is a .flatpak single-file bundle" \
     "--from:Assume LOCATION is a .flatpakref application description" \
     "--gpg-file=FILE:Check bundle signatures with GPG key from FILE (- for stdin)" \
     "--subpath=PATH:Only install this subpath" \
     "--assumeyes:Automatically answer yes for all questions" \
+    "--noninteractive:Produce minimal output and avoid most questions" \
     "--verbose:Print debug information during command processing" \
     "--ostree-verbose:Print OSTree debug information during command processing"
   )
